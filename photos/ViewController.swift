@@ -9,7 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var photo: UIImageView!
+    var i = 1
 
+    @IBAction func back(sender: AnyObject) {
+        photo.image = UIImage(named:"\(i).jpg")
+        i--
+        if(i<1){
+            i=1
+        }
+    }
+    
+    @IBAction func next(sender: AnyObject) {
+        photo.image = UIImage(named:"\(i).jpg")
+        i++
+        if(i>4){
+         i=1
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
